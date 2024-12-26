@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Files.Models;
-using Microsoft.EntityFrameworkCore;
+using Files.Services;
+
 
 namespace Files.Controllers
 {
@@ -8,16 +9,15 @@ namespace Files.Controllers
     [Route("api/[action]")]
     public class FileController : ControllerBase 
     {
-        private readonly FileContext _context;
-
-        public FileController(FileContext context) {
-            _context = context;
+        public readonly FileService _fileService;
+        public FileController(FileService fileService) {
+            _fileService = fileService;
         }
 
         [HttpGet]
         public async Task<ActionResult<Files.Models.File>> GetFile(long id) 
         {
-            var file = await _context.FileItems.FindAsync(id);
+            var file = await _fileService.GetFileById(id);
 
             if (file == null) {
                 return NotFound("File not found");
@@ -29,27 +29,22 @@ namespace Files.Controllers
         [HttpGet]
         public async Task<ActionResult> GetFiles() 
         {
-            var files = await _context.FileItems.ToListAsync();
+            var files = await _fileService.GetFiles();
             return Ok(files);
         }
 
         [HttpPost]
         public async Task<ActionResult<Files.Models.FileDTO>> UploadFile(FileDTO fileDTO) 
         {
-            var existingFile = _context.FileItems.FirstOrDefaultAsync(e => e.Name == fileDTO.Name).Result;
-            if (existingFile != null) {
-                return BadRequest("File with this name already exists");
+            var isValid = await _fileService.ValidateFile(fileDTO);
+            if (isValid) {
+                return BadRequest("File isn't valid!");
             }
 
-            var file = new Files.Models.File {
-                Name = fileDTO.Name,
-                BinaryContent = fileDTO.BinaryContent
-            };
-            
-            _context.FileItems.Add(file);
-            await _context.SaveChangesAsync();
+            var file = await _fileService.SaveFileAsync(fileDTO);
 
-            // return Ok();
+            await _fileService.CreateFile(fileDTO);
+
             return CreatedAtAction(nameof(GetFile), new { id = file.Id }, file);
         }
     }
