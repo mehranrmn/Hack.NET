@@ -8,8 +8,10 @@ namespace Files.Services
 {
     public class FileService {
         private readonly FileContext _context;
-        public FileService(FileContext context) {
+        private readonly IWebHostEnvironment _env;
+        public FileService(FileContext context, IWebHostEnvironment env) {
             _context = context;
+            _env = env;
         }
 
         public async Task<Models.File?> GetFileById(long id) {
@@ -22,7 +24,7 @@ namespace Files.Services
 
         public async Task<bool> ValidateFile(FileDTO fileDTO) {
             var dupFile = await _context.FileItems.FirstOrDefaultAsync(e => e.Name == fileDTO.Name);
-            return Convert.ToBoolean(dupFile);
+            return dupFile != null;
         }
 
         public async Task<Models.File> SaveFileAsync(Models.FileDTO fileDTO) {
@@ -41,7 +43,9 @@ namespace Files.Services
             byte[] contentInByte = Convert.FromBase64String(fileDTO.BinaryContent);
             // Console.WriteLine(System.Text.Encoding.UTF8.GetString(contentInByte));
             string fileName = fileDTO.Name;
-            System.IO.File.WriteAllBytes(fileName, contentInByte);
+
+            string filePath = Path.Combine(_env.WebRootPath, "images", fileName); 
+            System.IO.File.WriteAllBytes(filePath, contentInByte);
             return fileName;
         }
     }
