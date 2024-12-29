@@ -11,4 +11,8 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
+<ItemGroup>
+  <Compile Remove="Exploits/v0.1.0/PathTraversal/Poc.cs" /> <!-- Removing the exploitation file from the compilation process -->
+</ItemGroup>
+
 </Project>
