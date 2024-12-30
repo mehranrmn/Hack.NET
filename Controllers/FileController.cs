@@ -36,16 +36,21 @@ namespace Files.Controllers
         [HttpPost]
         public async Task<ActionResult<Files.Models.FileDTO>> UploadFile(FileDTO fileDTO) 
         {
-            var isValid = await _fileService.ValidateFile(fileDTO);
-            if (isValid) {
-                return BadRequest("File isn't valid!");
+            try {
+                var isValid = await _fileService.ValidateFile(fileDTO);
+                if (isValid) {
+                    return BadRequest("Invalid file");
+                }
+
+                var file = await _fileService.SaveFileAsync(fileDTO);
+
+                await _fileService.CreateFile(fileDTO);
+
+                return CreatedAtAction(nameof(GetFile), new { id = file.Id }, file);
             }
-
-            var file = await _fileService.SaveFileAsync(fileDTO);
-
-            await _fileService.CreateFile(fileDTO);
-
-            return CreatedAtAction(nameof(GetFile), new { id = file.Id }, file);
+            catch (InvalidOperationException ex) {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

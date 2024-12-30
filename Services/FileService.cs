@@ -40,13 +40,24 @@ namespace Files.Services
         }
 
         public async Task<String> CreateFile(Models.FileDTO fileDTO) {
-            byte[] contentInByte = Convert.FromBase64String(fileDTO.BinaryContent);
-            // Console.WriteLine(System.Text.Encoding.UTF8.GetString(contentInByte));
-            string fileName = fileDTO.Name;
+            try {
+                string fileName = fileDTO.Name;            
+                string uploadDir = Path.Combine(_env.WebRootPath, "images");
+                string filePath = Path.Combine(uploadDir, fileName);
+                string absoluteFilePath = Path.GetFullPath(filePath);
 
-            string filePath = Path.Combine(_env.WebRootPath, "images", fileName); 
-            System.IO.File.WriteAllBytes(filePath, contentInByte);
-            return fileName;
+                if (!absoluteFilePath.StartsWith(Path.GetFullPath(uploadDir) + Path.DirectorySeparatorChar)) {
+                    throw new InvalidOperationException("Invalid file name");
+                }
+
+                byte[] contentInByte = Convert.FromBase64String(fileDTO.BinaryContent);
+                System.IO.File.WriteAllBytes(filePath, contentInByte);
+
+                return fileName;
+            }
+            catch (InvalidOperationException ex) {
+                throw;
+            }
         }
     }
 }
