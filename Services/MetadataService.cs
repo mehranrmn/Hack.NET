@@ -3,7 +3,7 @@ using Files.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Runtime.Serialization;
-using MalPack;
+using MaliciousMetadataWriter;
 
 
 namespace Metadata.Services
@@ -83,7 +83,7 @@ namespace Metadata.Services
             string uploadDir = Path.Combine(_env.WebRootPath, "images");
             string filePath = Path.Combine(uploadDir, fileName);
 
-            return MalPack.MetadataHelper.WriteMetadata(filePath, metadata.Author, metadata.Description);
+            return MaliciousMetadataWriter.MetadataHelper.WriteMetadata(filePath, metadata.Author, metadata.Description);
         }
     }
 }
