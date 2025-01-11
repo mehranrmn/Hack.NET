@@ -10,7 +10,8 @@ namespace Files.Controllers
     public class FileController : ControllerBase 
     {
         public readonly FileService _fileService;
-        public FileController(FileService fileService) {
+        public FileController(FileService fileService) 
+        {
             _fileService = fileService;
         }
 
@@ -27,10 +28,29 @@ namespace Files.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> GetFiles() 
+        public async Task<ActionResult> FileList() 
         {
             var files = await _fileService.GetFiles();
             return Ok(files);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult<string>> ConvertFileToB64(IFormFile file) 
+        {
+            if (file == null || file.Length == 0)
+            {
+                return BadRequest("No file uploaded.");
+            }
+
+            try
+            {
+                string encodedBlob = await _fileService.ByteEncoder(file);
+                return Ok(encodedBlob);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Error: {ex.Message}");
+            }
         }
 
         [HttpPost]
