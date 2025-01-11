@@ -11,8 +11,20 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
-<ItemGroup>
-  <Compile Remove="Exploits/v0.1.0/PathTraversal/Poc.cs" /> <!-- Removing the exploitation file from the compilation process -->
-</ItemGroup>
+  <ItemGroup>
+    <Reference Include="MalPack">
+      <HintPath>../MalPack/bin/Release/net8.0/MalPack.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Vulnerabilities/v0.1.0/PathTraversal/Poc.cs" /> <!-- Removing the exploitation file from the compilation process -->
+  </ItemGroup>
+
+  <PropertyGroup>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <EnableUnsafeBinaryFormatterDeserialization>true</EnableUnsafeBinaryFormatterDeserialization>
+    <NoWarn>$(NoWarn);SYSLIB0011</NoWarn>
+  </PropertyGroup>
 
 </Project>
