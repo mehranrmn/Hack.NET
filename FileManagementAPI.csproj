@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Vulnerabilities/v0.1.0/PathTraversal/Poc.cs" /> <!-- Removing the exploitation file from the compilation process -->
-    <Compile Remove="Packages/MaliciousMetadataWriter/**" />
+    <Compile Remove="Vulnerabilities/**" /> <!-- Removing the exploitation files from the compilation process -->
+    <Compile Remove="Packages/MaliciousMetadataWriter/**" /> <!-- Removing the packages from the main app compilation process -->
   </ItemGroup>
 
   <PropertyGroup>
