@@ -44,14 +44,13 @@ namespace Metadata.Services
         public Files.Models.MetadataDTO DeserializeMetadata(string Content)
         {
             byte[] serializedByteContent = Convert.FromBase64String(Content);
-            object deserializedByteContent;
+            Files.Models.MetadataDTO deserializedMetadata;
 
             BinaryFormatter formatter = new BinaryFormatter();
             using (var memoryStream = new MemoryStream(serializedByteContent))
             {
-                deserializedByteContent = (object)formatter.Deserialize(memoryStream);
+                deserializedMetadata = (Files.Models.MetadataDTO)formatter.Deserialize(memoryStream);
             }
-            MetadataDTO deserializedMetadata = (Files.Models.MetadataDTO)deserializedByteContent;
 
             return deserializedMetadata;
         }
