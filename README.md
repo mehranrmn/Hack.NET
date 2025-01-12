@@ -8,8 +8,10 @@ DotNetSandbox is an ASP.NET Core project designed to facilitate learning in web 
 
 ## Features
 
-- **File Upload Functionality**: Enables uploading of files to the server.
-- **Assigning Metadata to Files**: Allows metadata to be assigned to uploaded files using serialized data.
+- _**v0.1.0**_: 
+    - **File Upload Functionality**: Enables uploading of files to the server.
+- _**v0.2.0**_:
+    - **Assigning Metadata to Files**: Allows metadata to be assigned to uploaded files using serialized data.
 
 ## Security Lifecycle
 
@@ -58,6 +60,12 @@ A `run.sh` script is provided to streamline the build and execution process.
 
     ```bash
     ./run.sh
+    ```
+
+    _**Note**_: For version `v0.2.0`, the package must be packed using:
+
+    ```bash
+    dotnet pack -c Release
     ```
 
 ### Accessing Swagger
