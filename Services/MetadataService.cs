@@ -1,8 +1,7 @@
 using System;
 using Files.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Runtime.Serialization;
+using System.Text.Json;
 using MaliciousMetadataWriter;
 
 
@@ -29,28 +28,18 @@ namespace Metadata.Services
 
         public string SerializeMetadata(Files.Models.MetadataDTO metadataDTO)
         {
-            string base64SerializedMetadata;
+            string jsonSerializedMetadata = JsonSerializer.Serialize(metadataDTO);
 
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (var memoryStream = new MemoryStream())
-            {
-                formatter.Serialize(memoryStream, metadataDTO);
-                base64SerializedMetadata = Convert.ToBase64String(memoryStream.ToArray());
-            }
+            string base64SerializedMetadata = Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(jsonSerializedMetadata));
 
             return base64SerializedMetadata;
         }
 
         public Files.Models.MetadataDTO DeserializeMetadata(string Content)
         {
-            byte[] serializedByteContent = Convert.FromBase64String(Content);
-            Files.Models.MetadataDTO deserializedMetadata;
+            string jsonSerializedMetadata = System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(Content));
 
-            BinaryFormatter formatter = new BinaryFormatter();
-            using (var memoryStream = new MemoryStream(serializedByteContent))
-            {
-                deserializedMetadata = (Files.Models.MetadataDTO)formatter.Deserialize(memoryStream);
-            }
+            Files.Models.MetadataDTO deserializedMetadata = JsonSerializer.Deserialize<Files.Models.MetadataDTO>(jsonSerializedMetadata);
 
             return deserializedMetadata;
         }
