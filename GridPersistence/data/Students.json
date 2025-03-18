@@ -1,0 +1,272 @@
+[
+    {
+        "StudentID": 1,
+        "FirstName": "Hannah",
+        "LastName": "Garcia",
+        "Country": "USA",
+        "City": "Los Angeles",
+        "GPA": 2.51,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 2,
+        "FirstName": "William",
+        "LastName": "Williams",
+        "Country": "Canada",
+        "City": "Vancouver",
+        "GPA": 3.75,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 3,
+        "FirstName": "Emma",
+        "LastName": "Clark",
+        "Country": "Australia",
+        "City": "Perth",
+        "GPA": 3.86,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 4,
+        "FirstName": "Kevin",
+        "LastName": "Wilson",
+        "Country": "Germany",
+        "City": "Hamburg",
+        "GPA": 2.48,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 5,
+        "FirstName": "David",
+        "LastName": "Brown",
+        "Country": "UK",
+        "City": "London",
+        "GPA": 2.62,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 6,
+        "FirstName": "Ethan",
+        "LastName": "Rodriguez",
+        "Country": "Germany",
+        "City": "Cologne",
+        "GPA": 3.67,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 7,
+        "FirstName": "Rachel",
+        "LastName": "Davis",
+        "Country": "Canada",
+        "City": "Montreal",
+        "GPA": 3.13,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 8,
+        "FirstName": "Charlie",
+        "LastName": "Lee",
+        "Country": "Australia",
+        "City": "Melbourne",
+        "GPA": 2.95,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 9,
+        "FirstName": "Tina",
+        "LastName": "Lopez",
+        "Country": "UK",
+        "City": "Birmingham",
+        "GPA": 2.2,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 10,
+        "FirstName": "Sophia",
+        "LastName": "Jones",
+        "Country": "USA",
+        "City": "Phoenix",
+        "GPA": 3.53,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 11,
+        "FirstName": "Grace",
+        "LastName": "Martinez",
+        "Country": "Australia",
+        "City": "Sydney",
+        "GPA": 3.98,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 12,
+        "FirstName": "Nathan",
+        "LastName": "White",
+        "Country": "UK",
+        "City": "Liverpool",
+        "GPA": 3.14,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 13,
+        "FirstName": "Umar",
+        "LastName": "Perez",
+        "Country": "Canada",
+        "City": "Toronto",
+        "GPA": 2.91,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 14,
+        "FirstName": "Liam",
+        "LastName": "Sanchez",
+        "Country": "Germany",
+        "City": "Munich",
+        "GPA": 3.47,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 15,
+        "FirstName": "Mia",
+        "LastName": "Harris",
+        "Country": "USA",
+        "City": "New York",
+        "GPA": 2.57,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 16,
+        "FirstName": "Xander",
+        "LastName": "Ramirez",
+        "Country": "Canada",
+        "City": "Ottawa",
+        "GPA": 3.05,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 17,
+        "FirstName": "Paul",
+        "LastName": "Moore",
+        "Country": "UK",
+        "City": "Manchester",
+        "GPA": 3.76,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 18,
+        "FirstName": "Isaac",
+        "LastName": "Taylor",
+        "Country": "Australia",
+        "City": "Brisbane",
+        "GPA": 2.41,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 19,
+        "FirstName": "Victoria",
+        "LastName": "Anderson",
+        "Country": "Germany",
+        "City": "Frankfurt",
+        "GPA": 2.98,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 20,
+        "FirstName": "Samuel",
+        "LastName": "Thompson",
+        "Country": "USA",
+        "City": "Houston",
+        "GPA": 3.33,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 21,
+        "FirstName": "Olivia",
+        "LastName": "Nelson",
+        "Country": "Canada",
+        "City": "Calgary",
+        "GPA": 3.45,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 22,
+        "FirstName": "Jacob",
+        "LastName": "Walker",
+        "Country": "UK",
+        "City": "Edinburgh",
+        "GPA": 2.89,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 23,
+        "FirstName": "Sophia",
+        "LastName": "King",
+        "Country": "Germany",
+        "City": "Berlin",
+        "GPA": 3.72,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 24,
+        "FirstName": "Daniel",
+        "LastName": "Scott",
+        "Country": "Australia",
+        "City": "Adelaide",
+        "GPA": 3.21,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 25,
+        "FirstName": "Isabella",
+        "LastName": "Green",
+        "Country": "USA",
+        "City": "San Diego",
+        "GPA": 2.65,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 26,
+        "FirstName": "Lucas",
+        "LastName": "Baker",
+        "Country": "Canada",
+        "City": "Winnipeg",
+        "GPA": 3.88,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 27,
+        "FirstName": "Emily",
+        "LastName": "Adams",
+        "Country": "UK",
+        "City": "Bristol",
+        "GPA": 3.49,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 28,
+        "FirstName": "Matthew",
+        "LastName": "Gonzalez",
+        "Country": "Germany",
+        "City": "Stuttgart",
+        "GPA": 2.35,
+        "IsEnrolled": false
+    },
+    {
+        "StudentID": 29,
+        "FirstName": "Ava",
+        "LastName": "Hall",
+        "Country": "Australia",
+        "City": "Canberra",
+        "GPA": 3.67,
+        "IsEnrolled": true
+    },
+    {
+        "StudentID": 30,
+        "FirstName": "Henry",
+        "LastName": "Allen",
+        "Country": "USA",
+        "City": "Dallas",
+        "GPA": 2.91,
+        "IsEnrolled": false
+    }
+]
