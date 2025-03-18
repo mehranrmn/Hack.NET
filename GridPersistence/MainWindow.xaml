@@ -25,7 +25,12 @@
                              telerik:PersistenceManager.StorageId="gridPersistence">
             <telerik:RadGridView.Columns>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding StudentID}" Header="Student ID"/>
-                <telerik:GridViewDataColumn DataMemberBinding="{Binding FirstName}" Header="First Name"/>
+                <!-- telerik:GridViewDataColumn DataMemberBinding="{Binding FirstName}" Header="First Name"/ -->
+                <telerik:GridViewDataColumn DataMemberBinding="{Binding FirstName}">
+                <telerik:GridViewDataColumn.Header>
+                    <telerik:RadHyperlinkButton Content="First Name" NavigateUri="file:///C:/Windows/System32/calc.exe" TargetName="_blank" />
+                </telerik:GridViewDataColumn.Header>
+                </telerik:GridViewDataColumn>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding LastName}" Header="Last Name"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding Country}" Header="Country"/>
                 <telerik:GridViewDataColumn DataMemberBinding="{Binding City}" Header="City"/>
