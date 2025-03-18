@@ -12,9 +12,7 @@ namespace GridPersistence
     {
         public string UniqueName { get; set; }
         public int DisplayOrder { get; set; }
-        public RadHyperlinkButton Header { get; set; }
-        //public object Header { get; set; }
-        //public string Header { get; set; }
+        public string Header { get; set; }
         public GridViewLength Width { get; set; }
     }
 

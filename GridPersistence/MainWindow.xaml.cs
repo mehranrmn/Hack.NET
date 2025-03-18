@@ -27,7 +27,23 @@ namespace GridPersistence
     /// </summary>
     public partial class MainWindow : Window
     {
-        private PersistenceManager manager = new PersistenceManager();
+        private PersistenceManager manager = new PersistenceManager()
+            .AllowDataAssembly()
+            .AllowCoreControls()
+            .AllowGridViewControls()
+            .AllowTypes(
+                typeof(ColumnProxy),
+                typeof(SortDescriptorProxy),
+                typeof(GroupDescriptorProxy),
+                typeof(FilterDescriptorProxy),
+                typeof(FilterSetting),
+                typeof(List<ColumnProxy>),
+                typeof(List<SortDescriptorProxy>),
+                typeof(List<GroupDescriptorProxy>),
+                typeof(List<FilterDescriptorProxy>),
+                typeof(List<FilterSetting>),
+                typeof(List<object>)
+            );
         public MainWindow()
         {
             ServiceProvider.RegisterPersistenceProvider<ICustomPropertyProvider>(typeof(RadGridView), new GridCustomPropertyProvider());

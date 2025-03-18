@@ -56,9 +56,7 @@ namespace GridPersistence
                             columnProxies.Add(new ColumnProxy()
                             {
                                 UniqueName = column.UniqueName,
-                                Header = column.Header as RadHyperlinkButton,
-                                //Header = column.Header,
-                                //Header = column.Header.ToString(),
+                                Header = column.Header.ToString(),
                                 DisplayOrder = column.DisplayIndex,
                                 Width = column.Width,
                             });
