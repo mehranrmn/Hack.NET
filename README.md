@@ -20,6 +20,7 @@ Hack.NET employs a security lifecycle approach to demonstrate the progression fr
 
 Hack.NET currently includes the following project:  
 - **FileManagementAPI**: An ASP.NET Core project focused on implementing, exploiting, and mitigating vulnerabilities using file management APIs.
+- **GridPersistence**: A WPF-based vulnerable sandbox utilizing Telerik UI for WPF, to demonstrate exploitation of CVE-2024-10095.
 
 ## Contact
 
