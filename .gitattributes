@@ -1,0 +1,17 @@
+# Automatically normalize line endings across OS
+* text=auto
+
+# Explicit rules for specific file types
+*.cs     text diff=csharp
+*.xaml   text
+*.config text
+*.md     text
+*.json   text
+
+# Binary files
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.dll    binary
+*.exe    binary
